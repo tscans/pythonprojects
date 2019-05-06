@@ -26,10 +26,9 @@ class RunCode extends React.Component{
         });
     }
     onChange = (x,y) =>{
-        x = x.replace(/[“]/g,'"');
-        x = x.replace(/[”]/g,'"');
-        x = x.replace(/[‘]/g,"'");
-        x = x.replace(/[’]/g,"'");
+        x = x
+  .replace(/[\u2018\u2019]/g, "'")
+  .replace(/[\u201C\u201D]/g, '"');
         this.setState({code:x});
     }
     flipView = () =>{
